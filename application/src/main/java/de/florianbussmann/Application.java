@@ -8,18 +8,15 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan({"com.sap.cloud.sdk", "de.florianbussmann"})
-@ServletComponentScan({"com.sap.cloud.sdk", "de.florianbussmann"})
-public class Application extends SpringBootServletInitializer
-{
-    @Override
-    protected SpringApplicationBuilder configure( final SpringApplicationBuilder application )
-    {
-        return application.sources(Application.class);
-    }
+@ComponentScan({ "com.sap.cloud.sdk", "de.florianbussmann" })
+@ServletComponentScan({ "com.sap.cloud.sdk", "de.florianbussmann" })
+public class Application extends SpringBootServletInitializer {
+	@Override
+	protected SpringApplicationBuilder configure(final SpringApplicationBuilder application) {
+		return application.sources(Application.class);
+	}
 
-    public static void main( final String[] args )
-    {
-        SpringApplication.run(Application.class, args);
-    }
+	public static void main(final String[] args) {
+		SpringApplication.run(Application.class, args);
+	}
 }

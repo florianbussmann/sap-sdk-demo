@@ -46,6 +46,11 @@
             <artifactId>sdk-core</artifactId>
         </dependency>
 
+		<dependency>
+		    <groupId>io.temporal</groupId>
+		    <artifactId>temporal-spring-boot-starter</artifactId>
+		    <version>1.36.1</version>
+		</dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
