@@ -64,18 +64,16 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- Dependencies for generated OData V4 VDM -->
-        <!--
+        <!-- Dependencies for generated OData V2 VDM -->
         <dependency>
             <groupId>com.sap.cloud.sdk.datamodel</groupId>
-            <artifactId>odata-v4-core</artifactId>
+            <artifactId>odata-core</artifactId>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <scope>provided</scope>
         </dependency>
-        -->
 
         <!-- Dependencies for security setup -->
         <!--
@@ -126,7 +124,6 @@
         <dependency>
             <groupId>org.skyscreamer</groupId>
             <artifactId>jsonassert</artifactId>
-            <version>1.5.1</version>
             <scope>test</scope>
             <exclusions>
                 <!-- exclude android-json to avoid conflict with org.json:json -->
@@ -204,10 +201,9 @@
             <!-- Plugin for generating Java classes from OData V4 metadata -->
             <!-- Have a look into our documentation for more details as well as the OData V2 generator: -->
             <!-- https://sap.github.io/cloud-sdk/docs/java/features/odata/vdm-generator -->
-            <!--
             <plugin>
                 <groupId>com.sap.cloud.sdk.datamodel</groupId>
-                <artifactId>odata-v4-generator-maven-plugin</artifactId>
+                <artifactId>odata-generator-maven-plugin</artifactId>
                 <version>${cloud-sdk.version}</version>
                 <executions>
                     <execution>
@@ -220,15 +216,15 @@
                             <inputDirectory>${project.basedir}/src/main/resources/edmx</inputDirectory>
                             <outputDirectory>${project.build.directory}/vdm</outputDirectory>
                             <deleteOutputDirectory>true</deleteOutputDirectory>
-                            <packageName>de.florianbussmann</packageName>
-                            <defaultBasePath>odata/v4/</defaultBasePath>
+                            <packageName>com.sap.vdm</packageName>
+                            <defaultBasePath>odata/v2/</defaultBasePath>
                             <compileScope>COMPILE</compileScope>
                             <serviceMethodsPerEntitySet>true</serviceMethodsPerEntitySet>
+                            <sapCopyrightHeader>true</sapCopyrightHeader>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
-            -->
         </plugins>
     </build>
 </project>

@@ -1,6 +1,14 @@
 server:
   port: 8080
 
+com:
+  sap:
+    vdm:
+      host: tenant.s4hana.ondemand.com
+      client: 500
+      username: sandbox
+      password: password
+
 ---
 #-- The below configuration is enabled **only** when activating the 'local' profile for Spring Boot
 spring:
